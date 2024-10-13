@@ -1,0 +1,3 @@
+interface GradeDTO {
+    grade: number
+}

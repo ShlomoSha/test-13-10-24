@@ -1,6 +1,8 @@
-export const addGrade = async (req: Request, res: Response): Promise<void> => {
+import { addGradeToStudentById } from "../services/gradesService"
+
+export const addGrade = async (req: any, res: Response): Promise<void> => {
     try {
-        
+        const result = await addGradeToStudentById(req.params.id, req.body)
     } catch (err) {
         
     }

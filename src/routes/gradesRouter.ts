@@ -4,9 +4,9 @@ import { addGrade, getAllGrades, getClassAverage, getGradesById, putGrade } from
 
 const gradesRouter: Router = Router()
 
-gradesRouter.post('/addGrade',onlyTeacher, addGrade as any)
+gradesRouter.post('/addGrade/:id',onlyTeacher, addGrade as any)
 
-gradesRouter.put('/putGrade', onlyTeacher, putGrade as any)
+gradesRouter.put('/putGrade/:id', onlyTeacher, putGrade as any)
 
 gradesRouter.get('/:id', getGradesById as any)
 
