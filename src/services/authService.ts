@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import UserModel from '../types/schenas/userModel'
 import IUser from '../types/interfaces/iuser'
 
-export const login = async (user: IUser): Promise<string | void> => {
+export const loginTheCollage = async (user: IUser): Promise<string | void> => {
     try {
         const dbUser = await UserModel.findOne({name: user.name})
 
