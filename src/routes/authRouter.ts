@@ -1,10 +1,10 @@
 import { Router } from "express"
-import { login } from "../controllers/authControler"
+import { login, logout } from "../controllers/authControler"
 
 const authRouter: Router = Router()
 
 authRouter.post('/login', login)
 
-authRouter.delete('/loguot', )
+authRouter.delete('/loguot', logout)
 
 export default authRouter

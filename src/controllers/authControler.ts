@@ -16,7 +16,9 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 export const logout  = async (req: Request, res:Response) => {
     try {
         res.clearCookie('token')
-        res.sendStatus(200)
+        res.status(200).json({
+            message: 'you out'
+        })
     } catch (err) {
         res.sendStatus(500)
     }
