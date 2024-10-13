@@ -8,7 +8,7 @@ export const onlyTeacher = async (req: Request, res: Response, next: NextFunctio
         const userData: IToken = await jwt.verify(token, process.env.TOKEN_DECRET!) as IToken
         if (userData.role != 'teacher') {
             res.status(403).send('You have no access')
-        }
+        }        
         next()
     } catch (err:any) {
         console.log(err)
