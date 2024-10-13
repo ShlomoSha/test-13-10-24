@@ -2,6 +2,7 @@ import mongoose, { Schema } from "mongoose"
 import IUser from "../interfaces/iuser"
 import validator from 'validator'
 import gradesSchema from "./gradesModel"
+import classSchema from "./classModel"
 
 const userScheba: Schema<IUser> = new mongoose.Schema<IUser>({
     name: {
@@ -19,10 +20,13 @@ const userScheba: Schema<IUser> = new mongoose.Schema<IUser>({
         unique: true,
         required: [true, 'You must declare password']
     },
-    class: {
+    _class: {
         type: String,
         required: [true, 'Where you learn?']
     },
+    studentInClass: [
+        {type: classSchema}
+    ],
     grades: [
         {type: gradesSchema}
     ]
