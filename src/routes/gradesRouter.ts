@@ -1,15 +1,16 @@
 import { Router } from "express"
+import { onlyTeacher } from "../middleware/authmiddleware"
 
 const gradesRouter: Router = Router()
 
-gradesRouter.post('/addGrade', )
+gradesRouter.post('/addGrade',onlyTeacher, )
 
-gradesRouter.put('/putGrade', )
+gradesRouter.put('/putGrade', onlyTeacher, )
 
 gradesRouter.get('/:id', )
 
-gradesRouter.get('/classAverage', )
+gradesRouter.get('/classAverage', onlyTeacher, )
 
-gradesRouter.post('/allGrades', )
+gradesRouter.post('/allGrades', onlyTeacher, )
 
 export default gradesRouter
