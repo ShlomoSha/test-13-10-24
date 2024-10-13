@@ -17,7 +17,7 @@ export const loginTheCollage = async (user: IUser): Promise<string | void> => {
                 id: dbUser._id,
                 name: dbUser.name,
                 role: dbUser.role,
-                class: dbUser.class
+                class: dbUser._class
             },
             process.env.TOKEN_SECRET!, 
             {

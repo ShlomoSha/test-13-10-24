@@ -18,8 +18,8 @@ app.use(cookieParser())
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs))
 
-app.use('auth', authRouter)
-app.use('register', registerRouter)
-app.use('grades', gradesRouter)
+app.use('/auth', authRouter)
+app.use('/register', registerRouter)
+app.use('/grades', gradesRouter)
 
 app.listen(port, () => console.log(`server up and running in http://localhost:${port}`))

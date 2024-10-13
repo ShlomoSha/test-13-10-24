@@ -19,11 +19,10 @@ export const createTeacher = async (teacher: IUser): Promise<void> => {
             email,
             _class,
             role: 'teacher',
-            studentInClass: []
         })
+        
         await newUser.save()
     } catch (err) {
-        console.log(err)
         throw err
     }
 }
@@ -49,8 +48,8 @@ export const createStudent = async (student: IUser): Promise<void> => {
     })
     await newUser.save()
     teacherClass.studentInClass!.push(newUser._id)
+    teacherClass.save()
     } catch (err) {
-        console.log(err)
         throw err
     }
 }

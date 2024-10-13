@@ -20,13 +20,19 @@ const userScheba: Schema<IUser> = new mongoose.Schema<IUser>({
         unique: true,
         required: [true, 'You must declare password']
     },
+    role: {
+        type: String,
+        required: [true, 'What your role?']
+    },
     _class: {
         type: String,
         required: [true, 'Where you learn?']
     },
-    studentInClass: [
-        {type: classSchema}
-    ],
+    studentInClass: {
+        type: [classSchema],
+        required: false
+    }
+    ,
     grades: [
         {type: gradesSchema}
     ]
